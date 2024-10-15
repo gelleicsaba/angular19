@@ -2,12 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import EventListener from '../app/services/event-listener.service'
 import { Subscription } from 'rxjs'
-import { AppModule } from '../app/app.common.modules'
+import { SafeHTMLPipe } from './pipes/safe-html.pipe'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppModule],
+  imports: [RouterOutlet, SafeHTMLPipe],
   template: `
     <h3>{{ title }}<label [innerHtml]="SEPARATOR | safeHTML"></label>{{ loginInfo }}</h3>
     <div>
