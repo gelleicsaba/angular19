@@ -6,7 +6,7 @@ import { DatePipe } from '@angular/common'
 
 @NgModule({
     imports: [ AsyncPipe ], 
-    exports: [ AsyncPipe ],
+    exports: [ AsyncPipe, SafeHTMLPipe ],
     providers: [
         DatePipe
     ],

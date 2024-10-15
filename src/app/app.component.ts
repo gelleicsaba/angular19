@@ -9,16 +9,16 @@ import { AppModule } from '../app/app.common.modules'
   standalone: true,
   imports: [RouterOutlet, AppModule],
   template: `
-    <h3>{{ title }}{{ SEPARATOR | safeHTML }}{{ loginInfo }}</h3>
+    <h3>{{ title }}<label [innerHtml]="SEPARATOR | safeHTML"></label>{{ loginInfo }}</h3>
     <div>
       <a href="/home">
         Home
       </a>
-      {{ SEPARATOR }}
+      <label [innerHtml]="SEPARATOR | safeHTML"></label>
       <a href="/clock">
         Clock
       </a>
-      {{ SEPARATOR }}
+      <label [innerHtml]="SEPARATOR | safeHTML"></label>
     </div>
     <hr/>
     <div>
