@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import EventListener from '../app/services/event-listener.service'
 import { Subscription } from 'rxjs'
 import { SafeHTMLPipe } from './pipes/safe-html.pipe'
+import { TestService } from './services/test.service'
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,9 @@ import { SafeHTMLPipe } from './pipes/safe-html.pipe'
         Clock
       </a>
       <label [innerHtml]="SEPARATOR | safeHTML"></label>
+      <a href="/signals">
+        Signals
+      </a>
     </div>
     <hr/>
     <div>
@@ -38,7 +42,8 @@ export class AppComponent implements OnInit,OnDestroy {
   loginInfo?: string = ""
 
   constructor(
-    private eventListener :EventListener<any>
+    private eventListener :EventListener<any>,
+    public _testservice :TestService
   ) { 
   }
  
